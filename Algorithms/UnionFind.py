@@ -12,7 +12,7 @@ class QuickFindUF:
             i = self.id[i]
         return i
 
-    #Lazy union
+    #Quick union
     def union(self, p,q):
         i = self.__root(p)
         j = self.__root(q)
