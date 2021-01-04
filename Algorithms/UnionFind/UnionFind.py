@@ -42,6 +42,7 @@ class UnionFind:
         return self.find(p) == self.find(q) 
 
 def main():
+    #Sets from https://algs4.cs.princeton.edu/15uf/
     with open("largeUF.txt") as file:
         num_elems = file.readline()
         unionFind = UnionFind(int(num_elems))
