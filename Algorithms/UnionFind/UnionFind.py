@@ -25,8 +25,7 @@ class UnionFind:
         """merge the set containing element with the set containing element"""
         rootP = self.find(p) 
         rootQ = self.find(q)
-        if rootP == rootQ:
-            return 
+        if rootP == rootQ: return 
         if self.rank[rootP] < self.rank[rootQ]:
             self.parent[rootP] = rootQ
         elif self.rank[rootP] > self.rank[rootQ]:
@@ -43,14 +42,14 @@ class UnionFind:
 
 def main():
     #Sets from https://algs4.cs.princeton.edu/15uf/
-    with open("largeUF.txt") as file:
+    with open("mediumUF.txt") as file:
         num_elems = file.readline()
         unionFind = UnionFind(int(num_elems))
         input = [line.rstrip("\n").split(" ") for line in file.readlines()]
         for value in input:
             p = int(value[0])
             q = int(value[1])
-            if unionFind.connected(p,q): continue
+            if unionFind.connected(p, q): continue
             unionFind.union(p, q)         
 
 if __name__ == "__main__":
